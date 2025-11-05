@@ -94,51 +94,42 @@ CREATE TABLE Cooking (
 
 ALTER TABLE Reservation
     ADD CONSTRAINT fk_reservation_customer
-    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
-    ON DELETE CASCADE;
+    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id);
 
 ALTER TABLE Reservation
     ADD CONSTRAINT fk_reservation_agent
-    FOREIGN KEY (agent_id) REFERENCES Agent(agent_id)
-    ON DELETE SET NULL;
+    FOREIGN KEY (agent_id) REFERENCES Agent(agent_id);
 
 ALTER TABLE Reservation
     ADD CONSTRAINT fk_reservation_table
-    FOREIGN KEY (table_id) REFERENCES Restaurant_Table(table_id)
-    ON DELETE CASCADE;
+    FOREIGN KEY (table_id) REFERENCES Restaurant_Table(table_id);
 
 ALTER TABLE Employee
     ADD CONSTRAINT fk_employee_role
-    FOREIGN KEY (employee_role_id) REFERENCES Employee_Role(employee_role_id)
-    ON DELETE SET NULL;
+    FOREIGN KEY (employee_role_id) REFERENCES Employee_Role(employee_role_id);
 
 ALTER TABLE Dish
     ADD CONSTRAINT fk_dish_ingredients
-    FOREIGN KEY (ingredients_id) REFERENCES ingredients(ingredients_id)
-    ON DELETE CASCADE;
+    FOREIGN KEY (ingredients_id) REFERENCES ingredients(ingredients_id);
 
 ALTER TABLE "Order"
     ADD CONSTRAINT fk_order_reservation
-    FOREIGN KEY (reservation_id) REFERENCES Reservation(reservation_id)
-    ON DELETE CASCADE;
+    FOREIGN KEY (reservation_id) REFERENCES Reservation(reservation_id);
 
 ALTER TABLE "Order"
     ADD CONSTRAINT fk_order_employee
-    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
-    ON DELETE SET NULL;
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id);
 
 ALTER TABLE Cooking
     ADD CONSTRAINT fk_cooking_dish
-    FOREIGN KEY (dish_id) REFERENCES Dish(dish_id)
-    ON DELETE CASCADE;
+    FOREIGN KEY (dish_id) REFERENCES Dish(dish_id);
 
 ALTER TABLE Cooking
     ADD CONSTRAINT fk_cooking_employee
-    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
-    ON DELETE CASCADE;
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id);
 
 ALTER TABLE Payment
     ADD CONSTRAINT fk_payment_order
-    FOREIGN KEY (order_id) REFERENCES "Order"(order_id)
-    ON DELETE CASCADE;
+    FOREIGN KEY (order_id) REFERENCES "Order"(order_id);
+
 
